@@ -1,0 +1,53 @@
+﻿<Window x:Class="Encrypt.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Encrypt"
+        mc:Ignorable="d"
+        FontSize="14"
+        Title="MainWindow" Height="550" Width="800">
+    <Grid Margin="0,0,0,-1">
+        <ComboBox Name="SelectEncryptionCombobox" HorizontalAlignment="Left" Margin="80,64,0,0" VerticalAlignment="Top"
+                  Width="120" SelectedIndex="0">
+            <TextBlock>AES</TextBlock>
+            <TextBlock>DES</TextBlock>
+            <TextBlock>TripleDes</TextBlock>
+        </ComboBox>
+        <Label Content="Select Encryption" HorizontalAlignment="Left" Margin="80,34,0,0" VerticalAlignment="Top"
+               Width="120" />
+        <TextBox Name="KeyText" HorizontalAlignment="Left" Margin="280,64,0,0" TextWrapping="Wrap"
+                 VerticalAlignment="Top" Width="380" />
+        <Label Content="Key" HorizontalAlignment="Left" Margin="280,35,0,0" VerticalAlignment="Top" Width="120" />
+        <TextBox x:Name="IvText" HorizontalAlignment="Left" Margin="280,114,0,0" TextWrapping="Wrap"
+                 VerticalAlignment="Top" Width="380" />
+        <Label Content="IV" HorizontalAlignment="Left" Margin="280,85,0,0" VerticalAlignment="Top" Width="120" />
+        <Button Name="GenerateKeyAndIv" Content="Generate Key and IV" HorizontalAlignment="Left" Margin="80,111,0,0"
+                VerticalAlignment="Top" Width="141" Click="GenerateKeyAndIv_Click" />
+        <Button Name="Encrypt" Content="Encrypt" HorizontalAlignment="Left" Margin="79,189,0,0" VerticalAlignment="Top"
+                Width="141" Click="Encrypt_Click" />
+        <Label Content="Cipher Text" HorizontalAlignment="Left" Margin="282,160,0,0" VerticalAlignment="Top"
+               RenderTransformOrigin="0.469,1.713" />
+        <TextBox x:Name="EncryptedAsciiText" HorizontalAlignment="Left" Margin="280,188,0,0" TextWrapping="Wrap"
+                 VerticalAlignment="Top" Width="380" />
+        <Label Content="ASCII" HorizontalAlignment="Left" Margin="237,184,0,0" VerticalAlignment="Top" />
+        <TextBox x:Name="EncryptedHexText" HorizontalAlignment="Left" Margin="280,238,0,0" TextWrapping="Wrap"
+                 VerticalAlignment="Top" Width="380" />
+        <Label Content="HEX" HorizontalAlignment="Left" Margin="244,234,0,0" VerticalAlignment="Top" />
+        <Label Content="Plain Text" HorizontalAlignment="Left" Margin="283,280,0,0" VerticalAlignment="Top"
+               RenderTransformOrigin="0.469,1.713" />
+        <TextBox x:Name="DecryptedText" HorizontalAlignment="Left" Margin="280,308,0,0" TextWrapping="Wrap"
+                 VerticalAlignment="Top" Width="380" />
+        <Label Content="Time for Decrypt" HorizontalAlignment="Left" Margin="266,384,0,0" VerticalAlignment="Top" />
+        <Button Name="Decrypt" Content="Decrypt" HorizontalAlignment="Left" Margin="80,306,0,0" VerticalAlignment="Top"
+                Width="140" Click="Decrypt_Click" />
+        <TextBox Name="MessageText" HorizontalAlignment="Left" Margin="280,19,0,0" Text="Hello Teacher!"
+                 TextWrapping="Wrap" VerticalAlignment="Top" Width="380" />
+        <Label Content="Time for Encrypt" HorizontalAlignment="Left" Margin="504,385,0,0" VerticalAlignment="Top" />
+        <Label Name="DecryptTimeLabel" Content="0" HorizontalAlignment="Left" Margin="275,415,0,0"
+               VerticalAlignment="Top" RenderTransformOrigin="1.425,0.491" />
+        <Label Name="EncryptTimeLabel" Content="0" HorizontalAlignment="Left" Margin="507,419,0,0"
+               VerticalAlignment="Top" />
+
+    </Grid>
+</Window>
